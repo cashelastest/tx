@@ -32,8 +32,11 @@ def send_message(data:dict[str,list]):
         body=f'Вітаю, {user[1]}! Ви придбали гру в Steam під назвою {user[2]}. Бажаю вам приємної гри!',
         to=phone
         )
-        break
+
 
 
 if __name__ == "__main__":
-    send_message(get_data_from_excel('data/Book.xlsx'))
+    filename = input("Enter the filename(leave blank for data/Book.xlsx): ")
+    if filename:
+        filename = 'data/Book.xlsx'
+    send_message(get_data_from_excel(filename))
