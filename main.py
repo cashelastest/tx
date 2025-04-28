@@ -37,6 +37,6 @@ def send_message(data:dict[str,list]):
 
 if __name__ == "__main__":
     filename = input("Enter the filename(leave blank for data/Book.xlsx): ")
-    if filename:
+    if not filename:
         filename = 'data/Book.xlsx'
     send_message(get_data_from_excel(filename))
